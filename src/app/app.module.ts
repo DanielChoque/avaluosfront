@@ -12,11 +12,11 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatSortModule} from '@angular/material/sort';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
-
+//import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './index/login/login.component';
+import { LoginComponent } from './component/login/login.component';
+import {LoginService} from './service/login.service';
 
 @NgModule({
   declarations: [
@@ -40,8 +40,11 @@ import { LoginComponent } from './index/login/login.component';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatNativeDateModule
+    //,    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
