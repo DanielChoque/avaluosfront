@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         var respues=JSON.parse(JSON.stringify(res))._body;
 //this.userAdminTemp=JSON.parse(JSON.parse(JSON.stringify(res))._body);
         console.log(respues);
-        if(respues=="exito"){
+        if(respues=="login"){
           this.hiddenLogin=true;
           console.log("entro if");
         }

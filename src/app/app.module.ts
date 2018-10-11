@@ -13,17 +13,23 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 //import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
 import {LoginService} from './service/login.service';
 import { IndiceComponent } from './component/indice/indice.component';
+import { DatosComponent } from './component/indice/datos/datos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    IndiceComponent
+    IndiceComponent,
+    DatosComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,10 @@ import { IndiceComponent } from './component/indice/indice.component';
     MatSortModule,
     MatAutocompleteModule,
     MatFormFieldModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatGridListModule,
+    MatTabsModule,
+    MatTooltipModule
     //,    HttpClientModule
   ],
   providers: [
