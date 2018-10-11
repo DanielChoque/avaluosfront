@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../service/login.service';
-import { UserAdmin } from '../../model/UserAdmim';
+import { userAdmin } from '../../model/UserAdmim';
+import { Network } from '../../model/Network';
+
 
 
 @Component({
@@ -9,25 +11,54 @@ import { UserAdmin } from '../../model/UserAdmim';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userAdmin:UserAdmin=new UserAdmin();
+  urlImage=Network.IMAGE_URL;
+  userAdmin:userAdmin=new userAdmin();
+  userAdminTemp:userAdmin=new userAdmin();
+  name:string="daniel";
+  password:string="123";
+  hiddenLogin:boolean=false;
 
   constructor(private loginService:LoginService) { }
 
   ngOnInit() {
   }
+
+  
   login(){
+    this.userAdmin.nameAdmin=this.name;
+    this.userAdmin.password=this.password;
+
+    this.loginService.login(this.userAdmin).subscribe(
+      res=>{
+        var respues=JSON.parse(JSON.stringify(res))._body;
+//this.userAdminTemp=JSON.parse(JSON.parse(JSON.stringify(res))._body);
+        console.log(respues);
+        if(respues=="exito"){
+          this.hiddenLogin=true;
+          console.log("entro if");
+        }
+      },
+      error=>{
+        console.log(error);
+        console.log("");
+      }
+    );
+  }
+  phone(){
     this.userAdmin.nameAdmin="dangiel";
-    this.userAdmin.userAdminId=1;
+    this.userAdmin.userAdminId=2;
     this.userAdmin.password="123";
 
     this.loginService.phone().subscribe(
       res=>{
-        var respu=JSON.parse(JSON.parse(JSON.stringify(res))._body);
-        console.log(respu);
+       var pho=JSON.parse(JSON.parse(JSON.stringify(res))._body);
+        console.log(pho);
       },
       error=>console.log(error)
     );
     console.log("daniel hoal");
   }
-
+  salir(){
+    
+  }
 }

@@ -1,11 +1,23 @@
-<p>
-  login works!
-</p>
-<mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-<div>
-  <input type="button" value="aniem" (click)="login()">
+<div  [hidden]="hiddenLogin">
+  <div class="container-login100">  
+    <div class="wrap-login100" [hidden]="hiddenLogin">
+        <div class="login100-pic">
+            <img src="{{urlImage}}/img-01.png" alt="logo.png">
+        </div>
+      <div class="example-container">        
+          <div>
+            <mat-form-field>
+              <input matInput placeholder="Nombre" [(ngModel)]="name">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Password" [(ngModel)]="password">
+            </mat-form-field>
+            <div class="button-row">            
+              <button mat-stroked-button color="primary" (click)="login()">Ingresar</button>
+              <button mat-button color="warn" (click)="salir()">Salir</button>
+            </div>
+          </div>     
+      </div>
+    </div>  
+  </div>
 </div>

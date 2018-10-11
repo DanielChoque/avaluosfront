@@ -1,6 +1,6 @@
 export class Network {
-    public static API_URL = "http://localhost:8080/";  
-    //public static API_KEY = "RUREWVFVRU5BTExBVEE6ZWRkeQ==";
-    //public static BUCKET_URL ="https://s3-us-west-2.amazonaws.com/jsa-s3-bucketimage/image/";
+    public static API_URL = "http://127.0.0.1:8080/";  
+    //public static IMAGE_URL="/src/assets/image";    
+    public static IMAGE_URL="assets/image";
     public static PROTOCOL_URL = "http://";
 }

@@ -17,11 +17,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
 import {LoginService} from './service/login.service';
+import { IndiceComponent } from './component/indice/indice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    IndiceComponent
   ],
   imports: [
     BrowserModule,
