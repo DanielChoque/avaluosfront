@@ -12,6 +12,7 @@ import { Network } from '../../model/Network';
 })
 export class LoginComponent implements OnInit {
   urlImage=Network.IMAGE_URL;
+  
   userAdmin:userAdmin=new userAdmin();
   userAdminTemp:userAdmin=new userAdmin();
   name:string="daniel";
@@ -21,6 +22,11 @@ export class LoginComponent implements OnInit {
   constructor(private loginService:LoginService) { }
 
   ngOnInit() {
+    console.log(localStorage.getItem('user'))
+    if(localStorage.getItem('user') != null) {
+      this.hiddenLogin=true;
+    }
+    
   }
 
   
@@ -33,8 +39,9 @@ export class LoginComponent implements OnInit {
         var respues=JSON.parse(JSON.stringify(res))._body;
 //this.userAdminTemp=JSON.parse(JSON.parse(JSON.stringify(res))._body);
         console.log(respues);
-        if(respues=="login"){
+        if(respues!=""){
           this.hiddenLogin=true;
+          localStorage.setItem('user', respues);
           console.log("entro if");
         }
       },

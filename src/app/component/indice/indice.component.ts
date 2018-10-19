@@ -11,5 +11,11 @@ export class IndiceComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  logout(){
+    localStorage.setItem('user', '');
+		localStorage.removeItem('user');
+    localStorage.setItem('user', '');
+    localStorage.removeItem('user');
+		location.reload();		
+  }
 }

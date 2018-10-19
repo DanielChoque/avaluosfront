@@ -1,0 +1,17 @@
+<div style="padding-top: 50px;padding-bottom: 50px;">
+        <input type="file"  name="image-upload{{numberImageTemp}}" id="image-upload{{numberImageTemp}}">
+        <button mat-button color="warn" (click)="showInfo()">info</button>
+    <p>Cantidad de imagenes</p>
+    <input type="text" name="" id=""  [(ngModel)]="numberImage">
+    <button mat-raised-button color="primary" (click)="llenar()">Aceptar</button>        
+    <mat-nav-list>
+        <mat-list-item *ngFor="let link of typesOfShoes">
+            <!--a matLine href="...">{{ link }}</a-->
+            <p>{{cont(link)}} .-</p>
+            <input type="file" name="image-upload{{link}}" id="image-upload{{link}}" style="font-size: 12px;">
+        </mat-list-item>
+    </mat-nav-list>
+</div>
+
+<button mat-button color="warn" (click)="updatePhotos()">prueba</button>
+<button mat-button color="primary" (click)="crearAvaluo()">Crear</button>

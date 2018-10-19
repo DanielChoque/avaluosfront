@@ -16,6 +16,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import {MatListModule} from '@angular/material/list';
 
 
 import { AppComponent } from './app.component';
@@ -23,13 +25,15 @@ import { LoginComponent } from './component/login/login.component';
 import {LoginService} from './service/login.service';
 import { IndiceComponent } from './component/indice/indice.component';
 import { DatosComponent } from './component/indice/datos/datos.component';
+import { PhotoComponent } from './component/indice/photo/photo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     IndiceComponent,
-    DatosComponent
+    DatosComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { DatosComponent } from './component/indice/datos/datos.component';
     MatNativeDateModule,
     MatGridListModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    AngularFileUploaderModule,
+    MatListModule
     //,    HttpClientModule
   ],
   providers: [

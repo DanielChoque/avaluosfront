@@ -1,17 +1,20 @@
 <mat-tab-group dynamicHeight>
-    <mat-tab label="Short tab">
-      <div class="example-large-box mat-elevation-z4">
-        <app-datos></app-datos>
-      </div>
-    </mat-tab>
-    <mat-tab label="Long tab">
-      <div class="example-large-box mat-elevation-z4">
-        Large content
-      </div>
-    </mat-tab>
-    <mat-tab label="Short tab">
-      <div class="example-large-box mat-elevation-z4">
-        Small content
-      </div>
-    </mat-tab>
-  </mat-tab-group>
+  <mat-tab label="Fotos">
+    <div class="example-large-box mat-elevation-z4">
+      <app-photo></app-photo>
+    </div>
+  </mat-tab>
+  <mat-tab label="Datos">
+    <div class="example-large-box mat-elevation-z4">
+      
+      <app-datos></app-datos>
+    </div>
+  </mat-tab>
+  <mat-tab label="Short tab">
+    <div class="example-large-box mat-elevation-z4">
+      Small content
+    </div>
+  </mat-tab>
+  
+</mat-tab-group>
+<button mat-button color="warn" (click)="logout()">Salir</button>
