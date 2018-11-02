@@ -1,6 +1,6 @@
 
 export class Phone{
     idPhone:number;
-    number:string;
+    numberPhone:string;
     typePhone:string;
 }

@@ -8,5 +8,8 @@ export class Avaluo {
     userAvaluador:User=new User();
     avaluoImages:Array<AvaluoImages>=new Array<AvaluoImages>();;
     company:Company=new Company()
+    userCompany:User=new User();
     letter:Letter=new Letter();
+    userPrestatario:User = new User();
+    userPropietario:User = new User();
 }

@@ -24,9 +24,9 @@ export class PhotoComponent implements OnInit {
     console.log("Files2: ", file); 
     this.setImagePrincipal2(file);
     var f = file[0];
-    //var dD=f.getAsBinary();
+    var dD=f.getAsBinary();
     var url = file;
-    //console.log("f:"+f+" dD"+url)
+    console.log("f:"+f+" dD"+url)
     this.setImagePrincipal2(f);
   }
   fullPhoto(){
@@ -90,12 +90,14 @@ export class PhotoComponent implements OnInit {
     var binaryString = readerEvt.target.result;
    // console.log("binaryString:"+binaryString);
     this.base64textString= btoa(binaryString);
-    console.log("btoa:"+btoa(binaryString));    
+    this.setImageString(this.base64textString);
+    //console.log("btoa:"+btoa(binaryString));    
    }
 //este metodo solo es de referencia
   updatePhotos(){
     this.avaluoTemp=new Avaluo();
     this.avaluoImages=new  Array<AvaluoImages>();
+    this.avaluoImage=new AvaluoImages()
     //this.avaluoTemp.avaluoId=1;
     this.imageTempp.name="image.jpg";
     this.imageTempp.observation="create 2018 modyfi 2019";
@@ -119,7 +121,9 @@ export class PhotoComponent implements OnInit {
     );
   }
   crearAvaluo(){
-    this.avaluoTemp=new Avaluo();    
+    this.avaluoTemp=new Avaluo();
+    this.avaluoImages=new  Array<AvaluoImages>();
+    this.avaluoImage=new AvaluoImages(); 
     this.userAdminTemp=JSON.parse(localStorage.getItem('user'));
     console.log("user local:");
     this.avaluoTemp.userAvaluador=this.userAdminTemp.userAvaluador;    
@@ -127,18 +131,41 @@ export class PhotoComponent implements OnInit {
     this.showImage();
   }
   showImage(){
+    
     let files = this.elem.nativeElement.querySelector('#image-upload2').files;
     var f = files[0];
+    this.imageTempp.name=f.name;
+    this.imageTempp.observation=""+f.name+"::"+f.lastModifiedDate;
+    this.imageTempp.type="Secundario";
+    console.log("image: "+JSON.stringify(this.imageTempp));
     if (files && f) {
       var reader = new FileReader();
       reader.onload =this._handleReaderLoaded.bind(this);
       let d=reader.readAsBinaryString(f);
-      console.log("d:"+d);
+      console.log("d:"+this.base64textString);
     }
   }
+  setImageString(image64:string){
+    this.imageTempp.name=image64;
+    console.log("Image64: "+JSON.stringify(this.imageTempp));
+    this.avaluoImage.image=this.imageTempp;
+    this.avaluoImages.push(this.avaluoImage);
+    this.avaluoTemp.avaluoImages=this.avaluoImages;
+    this.avaluoTemp.userAvaluador=this.userAdminTemp.userAvaluador;
+    this.avaluoTemp.company=null;
+    this.avaluoTemp.letter=null;
+    this.avaluoService.createAvaluo(this.avaluoTemp).subscribe(
+      res=>{
+       var pho=JSON.parse(JSON.stringify(res))._body;
+        console.log("resp:"+pho);
+      },
+      error=>console.log(error)
+    );
+  }
+
   userAvaluador:User=new User();
   avaluoImages:Array<AvaluoImages>;
-  avaluoImage:AvaluoImages=new AvaluoImages();
+  avaluoImage:AvaluoImages;
   company:Company=new Company();
   typesOfShoes: string[]=[];
   numberImage:number=8;

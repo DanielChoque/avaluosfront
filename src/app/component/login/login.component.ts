@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
           this.hiddenLogin=true;
           localStorage.setItem('user', respues);
           console.log("entro if");
+          location.reload();
         }
       },
       error=>{

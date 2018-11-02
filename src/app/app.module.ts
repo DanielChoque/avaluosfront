@@ -18,7 +18,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import {MatListModule} from '@angular/material/list';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
@@ -26,6 +29,8 @@ import {LoginService} from './service/login.service';
 import { IndiceComponent } from './component/indice/indice.component';
 import { DatosComponent } from './component/indice/datos/datos.component';
 import { PhotoComponent } from './component/indice/photo/photo.component';
+import { CreateComponent } from './component/indice/create/create.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,8 @@ import { PhotoComponent } from './component/indice/photo/photo.component';
     LoginComponent,
     IndiceComponent,
     DatosComponent,
-    PhotoComponent
+    PhotoComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,12 @@ import { PhotoComponent } from './component/indice/photo/photo.component';
     MatTabsModule,
     MatTooltipModule,
     AngularFileUploaderModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatExpansionModule
     //,    HttpClientModule
   ],
   providers: [

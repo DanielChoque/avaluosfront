@@ -1,0 +1,207 @@
+
+<mat-card>
+  <div>
+      EMPRESA   &nbsp; &nbsp;&nbsp;          : 
+      <select placeholder="Empresa" [(ngModel)]="selectedValue" name="selectedValue" #w (change)="setCompany(selectedValue)">
+        <option *ngFor="let company of companyList" [value]="company.companyId">
+        {{company.nameCompany}}
+        </option>
+      </select>    
+    &nbsp;
+    <button mat-stroked-button color="primary" (click)="newCompany()">Nueva</button> 
+    <div [hidden]="hiddenNewCompany">        
+      <mat-form-field style="width: 90px;">
+        <input matInput placeholder="NIT" [(ngModel)]="nit">
+      </mat-form-field>
+      &nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput placeholder="Nombre" [(ngModel)]="nameCompany">
+      </mat-form-field>
+      &nbsp;
+      <button mat-stroked-button color="primary" (click)="saveCompany()">Guardar</button> 
+      &nbsp;
+      <button mat-stroked-button color="warn" (click)="cancelCompany()">Cancelar</button> 
+    </div>
+    
+    <div [hidden]="hiddenNewSolicitante">
+        SOLICITANTE :
+        <select placeholder="SOLICITANTE" [(ngModel)]="selectedUserValue" name="selectedUserValue" >
+          <option *ngFor="let userCompany of userCompanyList" [value]="userCompany.userId">
+          {{userCompany.user.titleUser}}. {{userCompany.user.name}} {{userCompany.user.lastName}}
+          </option>
+        </select>
+        &nbsp;
+        <button mat-stroked-button color="primary" (click)="newUserCompany()" >CREAR SOLICITANTE</button>
+    </div>
+  </div>
+  <br>
+  <div [hidden]="hiddenNewSolicitanteOpen">
+    SOLICITANTE    :    
+    <mat-form-field>
+      <input matInput placeholder="CARGO (Gerente General)" [(ngModel)]="chargeUserComany">
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field style="width: 60px;">
+      <mat-select placeholder="Título" [(ngModel)]="selectedTitleUserCompany" >
+        <mat-option *ngFor="let title of titles" [value]="title.value">
+          {{title.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <input matInput placeholder="NOMBRE" [(ngModel)]="nameUserCompany">
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <input matInput placeholder="APELLIDOS" [(ngModel)]="lastNameUserCompany">
+    </mat-form-field>
+    <!--mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Mas Datos
+            </mat-panel-title>
+            <mat-panel-description>
+                (Opcional) 
+            </mat-panel-description>
+          </mat-expansion-panel-header>      
+          <mat-form-field>
+            <input matInput placeholder="CI" [(ngModel)]="ciUserCompani">
+          </mat-form-field>
+          &nbsp;           
+          <mat-form-field style="width: 60px;">
+            <mat-select placeholder="Título">
+              <mat-option *ngFor="let title of titles" [value]="title.value">
+                {{title.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field>
+            <input matInput placeholder="Teléfono" [(ngModel)]="phoneUserCompani">
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field>
+            <mat-select placeholder="Departamento" [(ngModel)]="selectedValue" name="food">
+              <mat-option *ngFor="let company of companyList" [value]="company.nameCompany">
+                {{company.nameCompany}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field>
+            <mat-select placeholder="Procincia" [(ngModel)]="selectedValue" name="food">
+              <mat-option *ngFor="let company of companyList" [value]="company.nameCompany">
+                {{company.nameCompany}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field>
+            <mat-select placeholder="Municipio" [(ngModel)]="selectedValueM" name="food">
+              <mat-option *ngFor="let municipality of municipalityList" [value]="municipality.name">
+                {{municipality.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-action-row>
+              <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+        </mat-expansion-panel>        
+      </mat-accordion-->
+      &nbsp;
+      <button mat-stroked-button color="primary" (click)="saveCompanyUser()">Guardar</button> 
+      &nbsp;
+      <button mat-stroked-button color="warn" (click)="cancelCompanyUser()">Cancelar</button>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-panel-title>
+      PRESTATARIO y PROPIETARIO  :
+  </mat-panel-title>
+  <div>    
+    <mat-form-field style="width: 78px;">
+      <input matInput placeholder="CI" [(ngModel)]="ciPrestatario">
+    </mat-form-field>
+      &nbsp;
+    <mat-form-field style="width: 60px;">
+      <mat-select placeholder="Título">
+        <mat-option *ngFor="let title of titles" [value]="title.value">
+          {{title.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+      &nbsp;
+    <mat-form-field>        
+      <input matInput placeholder="NOMBRE" [(ngModel)]="namePrestatario">
+    </mat-form-field>
+      &nbsp;
+    <mat-form-field>
+      <input matInput placeholder="APELLIDOS" [(ngModel)]="lastNamePrestatario">
+    </mat-form-field>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                PROPIETARIO    :
+            </mat-panel-title>
+            <mat-panel-description>
+                (Opcional) 
+            </mat-panel-description>
+          </mat-expansion-panel-header>      
+          <mat-form-field style="width: 78px;">
+            <input matInput placeholder="CI" [(ngModel)]="ciPropietario" >
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field style="width: 60px;">
+            <mat-select placeholder="Título">
+              <mat-option *ngFor="let title of titles" [value]="title.value" >
+                {{title.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field>
+            <input matInput placeholder="NOMBRE" [(ngModel)]="namePropietario">
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field>
+            <input matInput placeholder="APELLIDOS" [(ngModel)]="lastNamePropietario">
+          </mat-form-field>
+          <mat-action-row>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>        
+      </mat-accordion>
+      
+  </div>
+  <mat-divider></mat-divider>
+  <div>
+      
+  </div>
+  <mat-divider></mat-divider>
+  <div>
+      UBICACIÓN    :
+      <mat-form-field>
+        <input matInput placeholder="Nombre" [(ngModel)]="name">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput placeholder="Nombre" [(ngModel)]="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Nombre" [(ngModel)]="name">
+      </mat-form-field>
+  </div>
+  <mat-form-field style="width: 65px;">
+    <mat-select placeholder="Favorite food">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

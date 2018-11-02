@@ -1,10 +1,10 @@
-import { User } from "./User";
 import { Ubication } from "./Ubication";
+import { CompanyUser } from "./CompanyUser";
 
 export class Company {
     companyId:number
     nameCompany:string
     nit:string
-    companyUser:Array<User> =new Array<User>()
+    companyUser:Array<CompanyUser> =new Array<CompanyUser>()
     ubicationCompany:Ubication=new Ubication();
 }

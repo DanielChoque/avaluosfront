@@ -1,4 +1,10 @@
+<mat-card-subtitle ALIGN="right">{{headerPage}}</mat-card-subtitle>
 <mat-tab-group dynamicHeight>
+  <mat-tab label="Nuevo Avaluo">
+    <div class="example-large-box mat-elevation-z4">
+      <app-create></app-create>
+    </div>
+  </mat-tab>
   <mat-tab label="Fotos">
     <div class="example-large-box mat-elevation-z4">
       <app-photo></app-photo>
@@ -18,3 +24,4 @@
   
 </mat-tab-group>
 <button mat-button color="warn" (click)="logout()">Salir</button>
+<mat-card-subtitle ALIGN="right">{{footerPage}}</mat-card-subtitle>
