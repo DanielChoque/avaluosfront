@@ -1,4 +1,4 @@
-<div style="padding-top: 50px;padding-bottom: 50px;">
+<!--div style="padding-top: 50px;padding-bottom: 50px;">
         <input type="file"  name="image-upload{{numberImageTemp}}" id="image-upload{{numberImageTemp}}">
         <button mat-button color="warn" (click)="showInfo()">info</button>
     <p>Cantidad de imagenes</p>
@@ -6,7 +6,7 @@
     <button mat-raised-button color="primary" (click)="llenar()">Aceptar</button>        
     <mat-nav-list>
         <mat-list-item *ngFor="let link of typesOfShoes">
-            <!--a matLine href="...">{{ link }}</a-->
+            
             <p>{{cont(link)}} .-</p>
             <input type="file" name="image-upload{{link}}" id="image-upload{{link}}" style="font-size: 12px;">
         </mat-list-item>
@@ -14,4 +14,94 @@
 </div>
 
 <button mat-button color="warn" (click)="updatePhotos()">prueba</button>
-<button mat-button color="primary" (click)="crearAvaluo()">Crear</button>
+<button mat-button color="primary" (click)="crearAvaluo()">Crear</button-->
+    <div id="contents">
+        <section id="main">
+            <section id="featured">
+                <h2 class="ftheading">Datos Generales</h2>
+                <div class="ftwrap">
+               <form action="index/GuardaDatosPrincipio.php?ACCION=GuardaDatosPrincipio" method="post" enctype="multipart/form-data">
+                    <div class="ftimg">
+                        <img src="./temas/ban/images/arc1.png" width="204" height="128" alt="img1"><br><br><br>FRONTIS<br>
+                        <p>  <input type="file" name="SubirFoto" class="botonFoto"></p>
+                           <p>  <input type="file" name="SubirFoto2" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto3" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto4" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto5" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto7" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto8" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto9" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto10" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto11" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto12" class="botonFoto"></p>
+                           <p><input type="file" name="SubirFoto13" class="botonFoto"></p>
+                    </div>
+                    <div class="fttxt">
+                        <h3>AVALUO TÉCNICO</h3>
+                        <p></p><article class="post"><p>TABLA TOTAL DE VALORES</p>
+<table width="100%">
+<tbody><tr>
+<td width="57%">Solicitante:</td>
+<td width="19%"><input type="text" name="SOLICITANTE" id="SOLICITANTE"></td>
+</tr>
+<tr>
+<td>Propietario:</td>
+<td><input type="text" name="PROPIETARIO" id="PROPIETARIO"></td>
+</tr>
+<tr>
+<td>Inmueble Avaluado:</td>
+<td>
+<select name="INMUEBLEAVALUO" id="INMUEBLEAVALUO"><option value="Terreno">Terreno</option><option value="Vivienda">Vivienda</option><option value="Comercio">Comercio</option><option value="Departamento">Departamento</option><option value="Fabrica">Fabrica</option><option value="Garaje">Garaje</option></select>
+
+</td>
+</tr>
+<tr>
+<td>Urbanizacion: </td>
+<td><input type="text" name="URBANIZACION" id="URBANIZACION"></td>
+</tr>
+
+<tr>
+<td>Jurisdiccion: </td>
+<td><input type="text" name="JURISDICCION" id="JURISDICCION"></td>
+</tr>
+
+
+
+<tr>
+<td>
+FOTO SATELITAL
+</td>
+      <td>
+<input type="file" name="SubirFoto6" class="botonFoto">
+</td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="Siguiente" class="botonImprimir"></td>
+</tr>
+</tbody></table>
+</article><br>
+                        <p></p>
+                    </div>
+                </form> 
+                </div>
+            </section>
+            
+        </section>
+        <section id="sidebar">
+            <div id="sidebarwrap">
+                <h2>Cálculo de avaluo</h2>
+                <p>El cálculo de avaluos se realiza de manera automatica, para este proceso se necesitan datos generales, por favor antes de empezar llene los datos principales de la parte izquierda. <a href="#"></a></p>
+
+
+            </div>
+            
+            
+        </section>
+        
+        
+
+
+
+        <div class="clear"></div>
+    </div>
