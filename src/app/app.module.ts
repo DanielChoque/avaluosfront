@@ -31,6 +31,8 @@ import { DatosComponent } from './component/indice/datos/datos.component';
 import { PhotoComponent } from './component/indice/photo/photo.component';
 import { CreateComponent } from './component/indice/create/create.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MainComponent } from './component/main/main.component';
+import { NavbarComponent } from './component/main/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     IndiceComponent,
     DatosComponent,
     PhotoComponent,
-    CreateComponent
+    CreateComponent,
+    MainComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

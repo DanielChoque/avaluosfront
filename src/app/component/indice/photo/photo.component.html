@@ -15,7 +15,13 @@
 
 <button mat-button color="warn" (click)="updatePhotos()">prueba</button>
 <button mat-button color="primary" (click)="crearAvaluo()">Crear</button-->
-    <div id="contents">
+
+
+
+
+
+    
+    <!--div id="contents">
         <section id="main">
             <section id="featured">
                 <h2 class="ftheading">Datos Generales</h2>
@@ -104,4 +110,103 @@ FOTO SATELITAL
 
 
         <div class="clear"></div>
-    </div>
+    </div-->
+
+
+
+    <div id="contents">
+        <section id="main">
+            <section id="featured">
+                <h2 class="ftheading">Datos Generales</h2>
+                <div class="ftwrap">
+	               <form action="index/GuardaDatosPrincipio.php?ACCION=GuardaDatosPrincipio" method="post" enctype="multipart/form-data">
+	                    <div class="ftimg">
+	                        <img src="../../../../assets/image/arc1.png" width="204" height="128" alt="img1"><br /><br /><br />FRONTIS<br />
+	                        <p><input type="file" name="SubirFoto" class="botonFoto" ></p>
+							<p><input type="file" name="SubirFoto2" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto3" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto4" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto5" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto7" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto8" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto9" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto10" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto11" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto12" class="botonFoto"></p>
+							<p><input type="file" name="SubirFoto13" class="botonFoto"></p>
+	                    </div>
+	                    <div class="fttxt">
+	                        <h3>AVALUO T&Eacute;CNICO</h3>
+                            <article class="post"><p>TABLA TOTAL DE VALORES</p>
+                                <table width="100%">
+                                    <tr>
+                                        <td width="57%">Empresa:</td>
+                                        <td width="19%"><input type="text" name="EMPRESA" id="EMPRESA" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="57%">Prestatario:</td>
+                                        <td width="19%"><input type="text" name="PRESTATARIO" id="PRESTATARIO" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="57%">Solicitante:</td>
+                                        <td width="19%"><input type="text" name="SOLICITANTE" id="SOLICITANTE" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Propietario:</td>
+                                        <td><input type="text" name="PROPIETARIO" id="PROPIETARIO" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inmueble Avaluado:</td>
+                                        <td>
+                                            <select name="INMUEBLEAVALUO" id="INMUEBLEAVALUO">
+                                                <option value="Terreno">Terreno</option>
+                                                <option value="Vivienda">Vivienda</option>
+                                                <option value="Comercio">Comercio</option>
+                                                <option value="Departamento">Departamento</option>
+                                                <option value="Fabrica">Fabrica</option>
+                                                <option value="Garaje">Garaje</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Urbanizacion: </td>
+                                        <td><input type="text" name="URBANIZACION" id="URBANIZACION" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Jurisdiccion: </td>
+                                        <td><input type="text" name="JURISDICCION" id="JURISDICCION" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            FOTO SATELITAL
+                                        </td>
+                                        <td>
+                                            <input type="file" name="SubirFoto6" class="botonFoto" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><input type="submit" value="Siguiente" class="botonImprimir"/></td>
+                                    </tr>
+                                </table>
+                            </article>
+	                    </div>
+	                </form> 
+            	</div>
+        	</section>               
+    	</section>
+	    <section id="sidebar">
+	        <div id="sidebarwrap">
+	            <h2>C�lculo de avaluo</h2>
+	            <p>El c�lculo de avaluos se realiza de manera automatica, para este proceso se necesitan datos generales, por favor antes de empezar llene los datos principales de la parte izquierda. <a href="#"></a></p>
+	        </div>
+	        
+	        <div id="sidebarwrap">
+	            <h2>Ultimos Avaluos</h2>
+	            AVaLUosREaLizaDos
+	        </div>
+	    </section>
+    	<div class="clear"></div>
+	</div>
