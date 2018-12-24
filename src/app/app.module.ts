@@ -33,6 +33,9 @@ import { CreateComponent } from './component/indice/create/create.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MainComponent } from './component/main/main.component';
 import { NavbarComponent } from './component/main/navbar/navbar.component';
+import { BodyComponent } from './component/main/body/body.component';
+import { SectionComponent } from './component/main/body/section/section.component';
+import { SidebarComponent } from './component/main/body/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { NavbarComponent } from './component/main/navbar/navbar.component';
     PhotoComponent,
     CreateComponent,
     MainComponent,
-    NavbarComponent
+    NavbarComponent,
+    BodyComponent,
+    SectionComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
